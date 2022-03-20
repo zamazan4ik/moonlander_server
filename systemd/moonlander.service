@@ -1,0 +1,13 @@
+[Unit]
+Description=Moonlander Service
+
+[Service]
+ExecStart=/path/to/moonlander_server
+ExecStop=/usr/bin/killall -w moonlander_server
+Restart=always
+StandardError=journal
+StandardOutput=journal
+Environment="DEVICE_PATH=1-8:1.1"
+
+[Install]
+WantedBy=default.target
